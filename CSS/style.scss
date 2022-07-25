@@ -1,0 +1,303 @@
+// Variables, resets and Mixins
+@import "variables";
+@import "breakpoint";
+
+// Header
+.header {
+  padding-top: 50px;
+  padding-bottom: 100px;
+  background-image: url("../images/bg-hero-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: $veryPaleCyan;
+
+  &_logo__section {
+    margin-bottom: 120px;
+    @include flex;
+
+    img {
+      width: 150px;
+    }
+
+    a {
+      @include btn;
+      color: $veryDarkCyan;
+      background-color: #fff;
+
+      &:hover {
+        background-color: $veryPaleCyan;
+      }
+    }
+  }
+
+  .hero_section {
+    @include flex;
+    flex-direction: column;
+  }
+
+  .hero_textbox {
+    text-align: center;
+    color: $veryDarkCyan;
+
+    h1 {
+      margin-bottom: 30px;
+      font-size: 35px;
+    }
+
+    p {
+      font-weight: 600;
+    }
+
+    a {
+      @include btn;
+      color: #fff;
+      margin-top: 50px;
+
+      &:hover {
+        background-color: lighten($color: $Pink, $amount: 10);
+      }
+    }
+  }
+
+  .hero_img {
+    margin-top: 50px;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.features__wrapper {
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  .features__box {
+    text-align: center;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+    @include flex;
+    flex-direction: column-reverse;
+    gap: 50px;
+
+    img {
+      width: 100%;
+    }
+
+    h2 {
+      font-size: 1.7rem;
+      margin-bottom: 30px;
+      color: $veryDarkCyan;
+    }
+    p {
+      color: $grayishBlue;
+    }
+  }
+}
+
+.mainCta {
+  margin-top: 100px;
+
+  &__wrapper {
+    position: relative;
+    text-align: center;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+    border-radius: 15px;
+    max-width: 800px;
+    margin: 0 auto -100px auto;
+    background-color: #fff;
+    z-index: 20;
+
+    h3 {
+      font-size: 1.4rem;
+      color: $veryDarkCyan;
+      margin-bottom: 30px;
+    }
+
+    a {
+      @include btn;
+      color: #fff;
+
+      &:hover {
+        background-color: lighten($color: $Pink, $amount: 10);
+      }
+    }
+  }
+}
+
+.footer {
+  background-color: $veryDarkCyan;
+  z-index: 10;
+  padding-top: 200px;
+  color: #fff;
+
+  svg {
+    color: #fff;
+    margin-bottom: 50px;
+    display: inline-block;
+  }
+
+  .footer_body__part1 li {
+    position: relative;
+    margin: 10px 0 20px 40px;
+
+    &::before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      background: url(../images/icon-location.svg) no-repeat center;
+      position: absolute;
+      left: -30px;
+    }
+
+    &:nth-child(2)::before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      background: url(../images/icon-phone.svg) no-repeat center;
+      position: absolute;
+      left: -30px;
+    }
+
+    &:nth-child(3)::before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      background: url(../images/icon-email.svg) no-repeat center;
+      position: absolute;
+      left: -30px;
+    }
+  }
+
+  .company li,
+  a {
+    padding-top: 10px;
+    color: #fff;
+    font-weight: 400;
+  }
+
+  .footer_body__part4 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    .icons img {
+      padding: 20px;
+      width: 70px;
+      border-radius: 30px;
+      border: 2px solid #fff;
+    }
+  }
+
+  .copyright {
+    text-align: center;
+    font-size: 14px;
+    padding-bottom: 50px;
+  }
+}
+
+// Media Query for different screen sizes
+@include mq-ls {
+  //Header section
+  .header {
+    background-image: url("../images/bg-hero-desktop.svg");
+
+    .hero_section {
+      @include flex;
+      flex-direction: row;
+      gap: 50px;
+    }
+
+    .hero_textbox {
+      flex-basis: 50%;
+      text-align: left;
+    }
+
+    .hero_img {
+      flex-basis: 50%;
+      margin-top: 50px;
+    }
+  }
+
+  //Features Section
+  .features__wrapper {
+    .features__box {
+      text-align: left;
+      padding: 80px 50px 80px;
+      margin-bottom: 30px;
+      @include flex;
+      flex-direction: row;
+      gap: 50px;
+
+      &:nth-child(2) {
+        flex-direction: row-reverse;
+      }
+
+      h2 {
+        font-size: 1.7rem;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  //Footer
+  .footer {
+    .footer_body {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 50px;
+    }
+
+    .footer_body__part4 {
+      text-align: left;
+    }
+
+    .copyright {
+      text-align: right;
+    }
+  }
+}
+
+//Largest MQ
+
+@include mq-xl {
+  //Fixed Hero Heading
+  .header {
+    .hero_textbox {
+      h1 {
+        font-size: 45px;
+      }
+    }
+  }
+
+  //Cta Section
+  .mainCta {
+    &__wrapper {
+      h3 {
+        font-size: 1.8rem;
+      }
+    }
+  }
+
+  //Footer
+  .footer {
+    .footer_body {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 50px;
+    }
+
+    .footer_body__part4 {
+      text-align: left;
+    }
+
+    .copyright {
+      text-align: right;
+    }
+  }
+}

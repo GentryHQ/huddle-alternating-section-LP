@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@600&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@400;700&display=swap");
+
+// Color Variables
+$Pink: hsl(322, 100%, 66%);
+$veryPaleCyan: hsl(193, 100%, 96%);
+$veryDarkCyan: hsl(192, 100%, 9%);
+$grayishBlue: hsl(208, 11%, 55%);
+
+// Fonts Variables
+$bodyCtaFont: "Open Sans", sans-serif;
+$HeadingFonts: "Poppins", sans-serif;
+
+// Some Resets
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+p,
+li {
+  font-family: $bodyCtaFont;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 700;
+  font-family: $bodyCtaFont;
+}
+
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $HeadingFonts;
+  font-weight: 600;
+}
+
+// Container
+.container {
+  max-width: 1200px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+// Mixin
+@mixin btn {
+  border-radius: 50px;
+  background-color: $Pink;
+  padding: 15px 35px;
+  box-shadow: 0 5px 16px 1px rgba(0, 0, 0, 0.205);
+  display: inline-block;
+}
+
+@mixin flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
