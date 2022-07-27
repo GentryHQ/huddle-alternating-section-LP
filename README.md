@@ -45,8 +45,8 @@ Mobile View
 
 ### Links
 
-- Solution URL: [Github Repo](https://your-solution-url.com)
-- Live Site URL: [GitHub Pages](https://your-live-site-url.com)
+- Solution URL: [Github Repo](https://github.com/GentryHQ/huddle-alternating-section-LP)
+- Live Site URL: [GitHub Pages](https://gentryhq.github.io/huddle-alternating-section-LP/)
 
 ## My process
 
